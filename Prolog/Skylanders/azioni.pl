@@ -162,3 +162,19 @@ controlla_Ghiaccio_in_rotta(Az,pos(X,Y), 1, NewGhiacci, NuovoMG) :-
     delete(NewGhiacci, pos(A,B), NuovoMG).
 
 controlla_Ghiaccio_in_rotta(_,_, 1,NewGhiacci,NewGhiacci).
+
+
+mossePossibili(Az,Mostro,Gemma1,Gemma2,Gemma3,MG):-
+    applicabile(Az,Mostro,Gemma1,Gemma2,Gemma3,MG);
+    applicabile(Az,Gemma1,Mostro,Gemma2,Gemma3,MG);
+    applicabile(Az,Gemma2,Mostro,Gemma1,Gemma3,MG);
+    applicabile(Az,Gemma3,Mostro,Gemma1,Gemma2,MG).
+
+
+cerca_martello_amp(pos(X,Y),0,1) :-
+    martello(pos(A,B)),
+    X = A,
+    Y=B.
+
+cerca_martello_amp(_,1,1).
+cerca_martello_amp(_,0,0).
