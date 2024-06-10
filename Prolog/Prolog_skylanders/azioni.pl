@@ -106,7 +106,7 @@ cerca_martello(pos(X,Y),0,FlagNuovo,_,NuovaVistitati) :-
     martello(pos(A,B)),
     X = A, 
     Y=B,
-    write('sei affianco al martello\n'),
+    %write('sei vicino al martello\n'),
     FlagNuovo is 1,
     NuovaVistitati = [].
 

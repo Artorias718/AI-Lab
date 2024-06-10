@@ -21,6 +21,6 @@ ricerca2(M,S,Visitati,[Azione|AltreAzioni],Pgemma1,Pgemma2,Pgemma3,Flag,MG):-
     % write(M),
     % write(Azione),
     % write(Posizioni),nl,
-    format('Visitati \n~w', [Visitati]), nl,
+    %format('Visitati \n~w', [Visitati]), nl,
     N is M+1,
     ricerca2(N,NuovoS,[Posizioni|NuovaVistitati],AltreAzioni,PNgemma1,PNgemma2,PNgemma3,FlagNuovo,NuovoMG).
