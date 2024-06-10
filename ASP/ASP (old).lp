@@ -1,4 +1,4 @@
-% #Vincolo: ogni squadra fa riferimento ad una città, che offre la struttura in cui la squadra gioca gli incontri in casa;
+% Vincolo: ogni squadra fa riferimento ad una città, che offre la struttura in cui la squadra gioca gli incontri in casa;
 squadra_citta(
     squadraRoma1,roma;
     squadraRoma2,roma;
@@ -29,11 +29,8 @@ giornata_di_ritorno(16..30).
 8{partita(ritorno,Squadra2,Squadra1,G):partita(andata,Squadra1,Squadra2,_)}8:-giornata_di_ritorno(G).
 
 
-
-
 % vincolo per garantire che ogni squadra giochi esattamente una partita in ciascuna giornata del campionato
 :-squadra_citta(Squadra,_),giornata(G), #count{Squadra1: partita(_,Squadra,Squadra1,G)}=PC, #count{Squadra2: partita(_,Squadra2,Squadra,G)}=PF, PC+PF !=1.
-
 
 % vincolo che assicura che ogni partita avvenga una sola volta durante l'intero campionato.  squadra1 vs. sqadra2 != squadra2 vs. squadra1
 :- partita(_,Squadra1,Squadra2, G),partita(_,Squadra1,Squadra2, G1), G != G1.
